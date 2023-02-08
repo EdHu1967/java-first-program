@@ -22,13 +22,15 @@ public class BestLoanRates {
         scanner.close();
     }
 
-    public static final Map<Integer, Float> bestRates = Map.of(1, 5.50f, 2, 3.45f, 3, 2.67f);
+    public static final Map<Integer, Float> bestRates = Map.of(
+            1, 5.50f,
+            2, 3.45f,
+            3, 2.67f);
 
     public static float getRates(int loanTermInYears) {
         if (bestRates.containsKey(loanTermInYears)) {
-            return bestRates.values().size();
-        } else {
-            return 0.0f;
+            return bestRates.get(loanTermInYears);
         }
+        return 0.0f;
     }
 }
